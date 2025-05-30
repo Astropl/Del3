@@ -20,6 +20,9 @@ private slots:
     //void on_pushButton_clicked();
     void init();
 
+    void miejsceWyjazdu();
+    void godzinaWyjazdu();
+    void dataWyjazdu();
 
     void on_btnExitAndSave_clicked();
 
