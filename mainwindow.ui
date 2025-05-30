@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1212</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="tblDelShow">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>50</y>
+      <width>881</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::SelectionMode::ExtendedSelection</enum>
+    </property>
+    <property name="rowCount">
+     <number>3</number>
+    </property>
+    <property name="columnCount">
+     <number>8</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <row/>
+    <row/>
+    <row/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>93</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Menu</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frmMenu">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>121</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Dodaj</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Edytuj</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Usuń</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Statystyki</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Szukaj</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbtExit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>93</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zakończ</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1212</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPLIK">
+    <property name="title">
+     <string>Plik</string>
+    </property>
+    <addaction name="actionNowa_delegacja"/>
+    <addaction name="actionEksport_danych"/>
+    <addaction name="separator"/>
+    <addaction name="actionZako_cz"/>
+   </widget>
+   <widget class="QMenu" name="menuEdycja">
+    <property name="title">
+     <string>Edycja</string>
+    </property>
+    <addaction name="actionEdytuj_delegacj"/>
+    <addaction name="actionUsu_delegacj"/>
+   </widget>
+   <widget class="QMenu" name="menuWidok">
+    <property name="title">
+     <string>Widok</string>
+    </property>
+    <addaction name="actionStatystyki"/>
+    <addaction name="actionFiltruj"/>
+    <addaction name="actionSzukaj"/>
+   </widget>
+   <widget class="QMenu" name="menuO_programie">
+    <property name="title">
+     <string>O programie</string>
+    </property>
+   </widget>
+   <addaction name="menuPLIK"/>
+   <addaction name="menuEdycja"/>
+   <addaction name="menuWidok"/>
+   <addaction name="menuO_programie"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNowa_delegacja">
+   <property name="text">
+    <string>Nowa delegacja</string>
+   </property>
+   <property name="iconText">
+    <string>Nowa delegacja</string>
+   </property>
+  </action>
+  <action name="actionEksport_danych">
+   <property name="text">
+    <string>Eksport danych</string>
+   </property>
+  </action>
+  <action name="actionZako_cz">
+   <property name="text">
+    <string>Zakończ</string>
+   </property>
+  </action>
+  <action name="actionEdytuj_delegacj">
+   <property name="text">
+    <string>Edytuj delegację</string>
+   </property>
+  </action>
+  <action name="actionUsu_delegacj">
+   <property name="text">
+    <string>Usuń delegację</string>
+   </property>
+  </action>
+  <action name="actionStatystyki">
+   <property name="text">
+    <string>Statystyki</string>
+   </property>
+  </action>
+  <action name="actionFiltruj">
+   <property name="text">
+    <string>Filtruj</string>
+   </property>
+  </action>
+  <action name="actionSzukaj">
+   <property name="text">
+    <string>Szukaj</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
