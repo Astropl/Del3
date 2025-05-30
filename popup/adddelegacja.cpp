@@ -6,6 +6,7 @@
 #include <QAction>
 #include <QVBoxLayout>
 #include <QDialog> // dodaj na górze
+#include <QDebug>
 
 AddDelegacja::AddDelegacja(QWidget *parent)
     : QDialog(parent)
@@ -21,6 +22,10 @@ AddDelegacja::AddDelegacja(QWidget *parent)
     QMenuBar *menuBar = new QMenuBar(this);
 
     // Dodanie menu i akcji
+    //TODO: Dodoac brrakująe=ce menu typu dodoaj miasta,
+    //TODO: godziny itd
+    qDebug() << ("Cos tutaj test");
+
     QMenu *add = new QMenu("Dodaj", this);
     QMenu *fileMenu1 = new QMenu("Cos1",this);
     QAction *exitAction = new QAction("Wyjście", this);
