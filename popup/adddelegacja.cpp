@@ -27,12 +27,17 @@ AddDelegacja::AddDelegacja(QWidget *parent)
     qDebug() << ("Cos tutaj test");
 
     QMenu *add = new QMenu("Dodaj", this);
+    //QMenu *add = new QMenu("Miejsce Wyjazdu");
     QMenu *fileMenu1 = new QMenu("Cos1",this);
+    QAction *dodajMiejscewyjazdu = new QAction("Miejsce Wyjazdu", this);
     QAction *exitAction = new QAction("Wyjście", this);
     QAction *cos2 = new QAction("cos2", this);
     connect(exitAction, &QAction::triggered, this, &QWidget::close);
     //connect(helpAction, &QAction::triggered, this,&QWidget::close );
+
+    add->addAction(dodajMiejscewyjazdu);
     add->addAction(exitAction);
+
     fileMenu1->addAction(cos2);
     //fileMenu1->addAction(cos2, &QAction::triggered, this, &QWidget::close);
     //fileMenu1->addAction()
