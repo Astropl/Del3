@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "popup/adddelegacja.h" // dodaj to
-
-
+#include "popup/ui_adddelegacja.h" // dodaj to
+//#include "popup/ui_popmiejscewyjazdu.h"
+#include "popup/ui_popmiejscewyjazdu.h"
+#include "popup/adddelegacja.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QDialog> // dodaj na górze
+#include "ui_popmiejscewyjazdu.h"
+#include "popmiejscewyjazdu.h"
 
 namespace Ui {
 class AddDelegacja;
@@ -28,6 +30,8 @@ private slots:
 
 private:
     Ui::AddDelegacja *ui;
+     //AddDelegacja *adddelegacja; // pole klasy
+    PopMiejsceWyjazdu *popMiejsceWyjazdu;
 };
 
 #endif // ADDDELEGACJA_H

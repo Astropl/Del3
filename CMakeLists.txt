@@ -17,7 +17,9 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        #adddelegacja.cpp
+        # adddelegacja.cpp
+        # adddelegacja.h
+        # adddelegacja.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -31,7 +33,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         popup/adddelegacja.h
         popup/adddelegacja.cpp
         popup/popmiejscewyjazdu.h popup/popmiejscewyjazdu.cpp popup/popmiejscewyjazdu.ui
-        popup/popgodzinawyjazdu.h popup/popgodzinawyjazdu.cpp popup/popgodzinawyjazdu.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Del3 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

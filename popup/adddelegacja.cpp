@@ -1,5 +1,7 @@
 #include "adddelegacja.h"
 #include "ui_adddelegacja.h"
+#include "popmiejscewyjazdu.h"
+#include "ui_popmiejscewyjazdu.h"
 #include <QMessageBox>
 #include <QMenuBar>
 #include <QMenu>
@@ -74,6 +76,9 @@ void AddDelegacja::godzinaWyjazdu()
 void AddDelegacja::miejsceWyjazdu()
 {
     qDebug()<<"Miejsce wyjazdu";
+    popMiejsceWyjazdu = new PopMiejsceWyjazdu(this);
+    popMiejsceWyjazdu->setModal(true);  // opcjonalne, exec() i tak ustawia
+    popMiejsceWyjazdu->exec();          // to sprawia, że główne okno jest zablokowan
 }
 
 void AddDelegacja::dataWyjazdu()
