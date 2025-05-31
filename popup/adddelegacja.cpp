@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 #include <QDialog> // dodaj na górze
 #include <QDebug>
-
+using namespace std;
 AddDelegacja::AddDelegacja(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::AddDelegacja)

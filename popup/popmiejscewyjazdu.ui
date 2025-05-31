@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>273</height>
+    <width>639</width>
+    <height>286</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="btnDodajWyjazd">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>210</y>
+     <x>180</x>
+     <y>160</y>
      <width>93</width>
      <height>29</height>
     </rect>
@@ -39,9 +39,9 @@
   <widget class="QLabel" name="lblDodajWyjazd">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>42</x>
      <y>90</y>
-     <width>63</width>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
@@ -57,6 +57,19 @@
      <width>113</width>
      <height>26</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnDodajWyjazdExit">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>160</y>
+     <width>93</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
    </property>
   </widget>
  </widget>

@@ -15,6 +15,11 @@ public:
     explicit PopMiejsceWyjazdu(QWidget *parent = nullptr);
     ~PopMiejsceWyjazdu();
 
+private slots:
+
+    void init();
+    void on_btnDodajWyjazd_clicked();
+
 private:
     Ui::PopMiejsceWyjazdu *ui;
 };
