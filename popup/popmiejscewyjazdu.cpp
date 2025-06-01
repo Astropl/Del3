@@ -1,7 +1,11 @@
 #include "popmiejscewyjazdu.h"
 #include "ui_popmiejscewyjazdu.h"
+#include "../db/dbinit.h"
+
 #include <QDebug>
 #include <QString>
+#include <QCoreApplication>
+
 using namespace std;
 QString dodajMiejscowosc;
 
@@ -35,6 +39,17 @@ void PopMiejsceWyjazdu::on_btnDodajWyjazd_clicked()
     dodajMiejscowosc = ui->lnlDodajWyjazd->text();
     qDebug()<< "miejsce to: " <<dodajMiejscowosc;
     ui->cmbDodajWyjazd->addItem(dodajMiejscowosc);
+    ui->lblDodajWyjazd->setText("");
+
+    //dodoaje obsługę bazy
+//QCoreApplication a(argc, argv);
+    DbInit db;
+    if (db.connectToDatabase("../../db/moja_baza1.db")) {
+        db.initializeTables();
+    }
+
+    //return a.exec();
+
 
 }
 

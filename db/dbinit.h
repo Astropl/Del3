@@ -1,15 +1,20 @@
 #ifndef DBINIT_H
 #define DBINIT_H
 
-#include <QMainWindow>
+#include <QObject>
+#include <QSqlDatabase>
 
-class DbInit : public QMainWindow
+class DbInit : public QObject
 {
     Q_OBJECT
-public:
-    explicit DbInit(QWidget *parent = nullptr);
 
-signals:
+public:
+    explicit DbInit(QObject *parent = nullptr);
+    bool connectToDatabase(const QString &dbPath);
+    void initializeTables();
+
+private:
+    QSqlDatabase db;
 };
 
 #endif // DBINIT_H
