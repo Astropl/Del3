@@ -28,34 +28,60 @@ bool DbInit::connectToDatabase(const QString &dbPath)
 void DbInit::initializeTables()
 {
     QSqlQuery query;
-    QString createTable;
-    createTable = R"(
-        CREATE TABLE IF NOT EXISTS cities (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            city TEXT
-        );
-    )";
+
+    // Tworzenie tabeli "cities"
+    QString createCitiesTable = R"(
+    CREATE TABLE IF NOT EXISTS cities (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        city TEXT
+    );
+)";
+
+
+    // Tworzenie tabeli "hours"
+    QString createHoursTable = R"(
+    CREATE TABLE IF NOT EXISTS hours (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        godzina TEXT
+    );
+)";
+    query.exec(createCitiesTable);
+    query.exec(createHoursTable);
+
+    if (!query.exec(createCitiesTable)) {
+        qDebug() << "Błąd tworzenia tabeli cities:" << query.lastError().text();
+    }
+
+    if (!query.exec(createHoursTable)) {
+        qDebug() << "Błąd tworzenia tabeli hours:" << query.lastError().text();
+    }
+
+
+    // QSqlQuery query;
+    // QString createTable;
+    // createTable = R"(
+    //     CREATE TABLE IF NOT EXISTS cities (
+    //         id INTEGER PRIMARY KEY AUTOINCREMENT,
+    //         city TEXT
+    //     );
+    // )";
 
 
 
 
     // createTable = R"(
-    //     CREATE TABLE IF NOT EXISTS lists (
+    //     CREATE TABLE IF NOT EXISTS hours (
     //         id INTEGER PRIMARY KEY AUTOINCREMENT,
-    //         dataWyjazdu TEXT,
-    //         godzinaWyjazdu TEXT,
-    //         dataPowrotu TEXT,
-    //         godzinaPowrotu TEXT,
-    //         miejsceWyjazdu TEXT,
-    //         czasDelegacji TEXT,
-    //         koszty TEXT,
-    //         nrDelegacji TEXT
+    //         godzina TEXT,
+
     //     );
     // )";
 
-    if (!query.exec(createTable)) {
-        qDebug() << "Błąd tworzenia tabeli:" << query.lastError().text();
-    } else {
-        qDebug() << "Tabela utworzona lub już istnieje.";
-    }
+
+
+    // if (!query.exec(createTable)) {
+    //     qDebug() << "Błąd tworzenia tabeli:" << query.lastError().text();
+    // } else {
+    //     qDebug() << "Tabela utworzona lub już istnieje.";
+    // }
 }
