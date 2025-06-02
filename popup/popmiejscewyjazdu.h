@@ -18,8 +18,9 @@ public:
 private slots:
 
     void init();
+    void initDb();
     void on_btnDodajWyjazd_clicked();
-
+    void wczytaj();
 private:
     Ui::PopMiejsceWyjazdu *ui;
 };

@@ -2,6 +2,10 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QString>
+
+
+using namespace std;
 
 DbInit::DbInit(QObject *parent)
     : QObject(parent)
@@ -57,31 +61,48 @@ void DbInit::initializeTables()
     }
 
 
-    // QSqlQuery query;
-    // QString createTable;
-    // createTable = R"(
-    //     CREATE TABLE IF NOT EXISTS cities (
-    //         id INTEGER PRIMARY KEY AUTOINCREMENT,
-    //         city TEXT
-    //     );
-    // )";
+}
+//ile jest wpisów w tabeli
+
+//wczytuje tyle razy ile wpisow
+int DbInit::citiesCount(int cityCount)
+{int cityCountInt;
+    // int cityCountInt = cityCount.toInt();
+    // qDebug()<<"string to : " <<cityCount<<"a cyfra to : "<< cityCountInt;
+    QSqlQuery query;
+
+     query.prepare("SELECT COUNT(*) FROM cities");
+
+    if (!query.exec()) {
+        qDebug() << "Błąd wykonania zapytania:" << query.lastError();
+        return -1;
+    }
+
+    if (query.next()) {
+        int cityCountInt = query.value(0).toInt();
+        return cityCountInt;
+    }
+     qDebug()<<"Liczba wpisów to: "<<cityCountInt;
+    return -1; // Na wypadek braku wyników
 
 
+    //return cityCountInt;
+}
 
+QString DbInit::citiesAdd(QString cityName)
+{
+    qDebug()<<"Dodaje do tbeli city: "<<cityName;
 
-    // createTable = R"(
-    //     CREATE TABLE IF NOT EXISTS hours (
-    //         id INTEGER PRIMARY KEY AUTOINCREMENT,
-    //         godzina TEXT,
+    QSqlQuery query;
+    query.prepare("INSERT INTO cities (city) VALUES (:name)");
+    query.bindValue(":name", cityName);
 
-    //     );
-    // )";
+    if (!query.exec()) {
+        qDebug() << "Błąd dodawania miasta:" << query.lastError().text();
+        return "Błąd: " + query.lastError().text();
+    }
 
+    return "Dodano pomyślnie: " + cityName;
 
-
-    // if (!query.exec(createTable)) {
-    //     qDebug() << "Błąd tworzenia tabeli:" << query.lastError().text();
-    // } else {
-    //     qDebug() << "Tabela utworzona lub już istnieje.";
-    // }
+    //return 0;
 }

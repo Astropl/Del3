@@ -78,7 +78,8 @@ void AddDelegacja::miejsceWyjazdu()
     qDebug()<<"Miejsce wyjazdu";
     popMiejsceWyjazdu = new PopMiejsceWyjazdu(this);
     popMiejsceWyjazdu->setModal(true);  // opcjonalne, exec() i tak ustawia
-    popMiejsceWyjazdu->exec();          // to sprawia, że główne okno jest zablokowan
+    popMiejsceWyjazdu->exec();
+        // to sprawia, że główne okno jest zablokowan
 }
 
 void AddDelegacja::dataWyjazdu()
