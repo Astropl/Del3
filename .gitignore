@@ -1,16 +1,37 @@
-# Pliki tymczasowe Qt i C++
+# Pliki Qt Creator
+*.autosave
+*.pro.user*
+*.creator*
+*.user
+
+# Build
+build*/
+Build*/
+build-*/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+
+# Pliki binarne
 *.o
 *.obj
-*.exe
+*.so
 *.dll
-*.user
-*.pro.user
+*.dylib
+*.a
+*.lib
+*.exe
+
+# Inne pliki tymczasowe
 *.log
-
-# Foldery build
-build/
-cmake-build-*/
-
-# Inne
-*.autosave
-*.DS_Store
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
