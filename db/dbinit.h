@@ -15,7 +15,7 @@ public:
     void initializeTables();
     QString citiesAdd(QString cityName);
     int citiesCount(int cityCount);
-
+    QString citiesAddToCombo(QString cityName, int a);
 
 
 private:

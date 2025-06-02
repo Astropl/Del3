@@ -67,8 +67,7 @@ void DbInit::initializeTables()
 //wczytuje tyle razy ile wpisow
 int DbInit::citiesCount(int cityCount)
 {int cityCountInt;
-    // int cityCountInt = cityCount.toInt();
-    // qDebug()<<"string to : " <<cityCount<<"a cyfra to : "<< cityCountInt;
+
     QSqlQuery query;
 
      query.prepare("SELECT COUNT(*) FROM cities");
@@ -85,8 +84,31 @@ int DbInit::citiesCount(int cityCount)
      qDebug()<<"Liczba wpisów to: "<<cityCountInt;
     return -1; // Na wypadek braku wyników
 
+}
+QString DbInit::citiesAddToCombo(QString cityName,int a)// a to liczba wpisow
+{
+    QSqlQuery query;
+     query.prepare("SELECT city From cities");
+    // cityName=query.value(a).toString();
 
-    //return cityCountInt;
+     if (!query.exec()) {
+         qDebug() << "Błąd zapytania:" << query.lastError().text();
+         return QString();
+     }
+    int i=0;
+     qDebug()<<" a teraz to: "<<a;
+    while(query.next())
+    {
+        if(i ==a)
+        {
+            qDebug()<<"zwracam teraz: "<<query.value(a).toString();
+            return query.value(0).toString();
+        }
+        i++;
+
+    }
+
+    return QString();
 }
 
 QString DbInit::citiesAdd(QString cityName)
